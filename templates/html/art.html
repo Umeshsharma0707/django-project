@@ -1,0 +1,153 @@
+{% extends 'html/base.html' %}
+{% block title %} Item List {% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <title>CSS Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+  <style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Raleway;
+  background-color: #202125;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.0em;
+    letter-spacing: 1px;
+    padding: 40px;
+    color: white;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image img {
+  height: 250px;
+  width: 350px;
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+}
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color:rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+  transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.img-box:hover {
+  cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.opacity-low {
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+  <p class="heading">Art & Handicrafts Gallery</p>
+  <div class="gallery-image">
+    <div class="img-box">
+      <img src="https://images.squarespace-cdn.com/content/v1/5a09054349fc2b1d7ba756d3/1531758959808-COP72QIHMAQTHFZF4GNG/frame+%28after%29.JPG?format=1500w" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Painting</p>
+          <p class="opacity-low">Architect Design</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://www.artisera.com/cdn/shop/products/NAA007A_420x.jpg?v=1632385287" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+         
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250/?image=431" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Tea Talk</p>
+          <p class="opacity-low">Composite</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://cdn.globalauctionplatform.com/00e2d55a-4ae3-4286-8e53-adc500e9659c/92a7c625-5ce2-450d-b379-adc500f1fa28/468x382.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJqQXeKk_F3g-cHDELXXFUoXBWCHhoXeFdkw&usqp=CAU" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgYHnaH_CRID9tk-hNqc9V1U9SH3xCMEV8w&usqp=CAU" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+         
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+{% endblock %}

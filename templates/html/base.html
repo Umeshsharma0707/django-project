@@ -1,0 +1,26 @@
+{% load static %}
+<html lang="en">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://img.freepik.com/premium-vector/antique-store-vector-logo-design_920207-169.jpg?w=2000">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sample.css' %}">
+  <script src="{% static 'jquery/demo.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <style>
+    *{
+     box-sizing: border-box;
+    }
+    body{
+      width:auto;
+      margin:0px;
+    }
+  </style>
+</head>
+<body>
+    {% include 'html/navbar.html' %}
+    {% block content %}
+    {% endblock %}
+</body>

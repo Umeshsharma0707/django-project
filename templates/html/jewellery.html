@@ -1,0 +1,153 @@
+{% extends 'html/base.html' %}
+{% block title %} Item List {% endblock %}
+{% load static %}
+
+{% block content %}
+<head>
+  <title>CSS Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+  <style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Raleway;
+  background-color: #202125;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.0em;
+    letter-spacing: 1px;
+    padding: 40px;
+    color: white;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image img {
+  height: 250px;
+  width: 350px;
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+}
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color:rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+  transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.img-box:hover {
+  cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.opacity-low {
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+  <p class="heading">Jewellery Gallery</p>
+  <div class="gallery-image">
+    <div class="img-box">
+      <img src="{% static 'images/jewel.jpg' %}" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>jewellery</p>
+          <p class="opacity-low">Women Design</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://i.etsystatic.com/17726894/r/il/4e3a88/3955450860/il_340x270.3955450860_3kgd.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://assets0.mirraw.com/images/5665120/IMG_0022_zoom.JPG?1678627912" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHxuaskX2nTlxZoLoZyX_TZWHELUydQZdgQ&usqp=CAU" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://claysphere.com/media/catalog/product/cache/e3c431b2ffe6e4485736c691617b9d2f/i/m/img_5260_-_copy.jpg" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://rukminim2.flixcart.com/image/850/1000/l2urv680/necklace-chain/t/6/u/1-ar120-necklace-set-sukhen-antique-jewellery-original-image3tmbumxvgga.jpeg?q=90" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+{% endblock %}

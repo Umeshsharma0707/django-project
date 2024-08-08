@@ -1,0 +1,30 @@
+
+{% extends 'html/base.html' %}
+{% block title %} Auction Item List {% endblock %}
+{% block content %}
+
+   <div class="container">
+  <div class="card col-md-6 mx-auto">
+    <h3 class="bg-info text-light text-center border rounded p-2 my-3">Update Item</h3>
+    <div class="card-body">
+       <form method="post">
+          {% csrf_token %}
+          <input type="text" name="n" placeholder="Item" value={{b.item}} class="form-control my-2">
+          <input type="text" name="y" placeholder="start_time" value={{b.start_time}} class="form-control my-2">
+          <input type="text" name="b" placeholder="end_time" value={{b.end_time}} class="form-control my-2">
+          <input type="text" name="a" placeholder="bid_amount" value={{b.bid_amount}} class="form-control my-2">
+          <input type="text" name="c" placeholder="highest_bid" value={{b.highest_bid}} class="form-control my-2">
+          <input type="text" name="d" placeholder="winner_name" value={{b.winner_name}} class="form-control my-2">
+          <div class="row my-3">
+            <div class="col">
+              <a href="{% url 'auction_url' %}" class="btn btn-secondary form-control"> Back</a>
+            </div>
+            <div class="col">
+              <input type="submit" value="Update item" name="" class="form-control btn btn-outline-success">
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

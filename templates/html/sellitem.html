@@ -1,0 +1,42 @@
+{% extends 'html/base.html' %}
+{% block title %} Sell Items {% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4 ">
+  <div class="card col-md-4 mx-auto shadow-lg border border-info">
+    {% if messages %}
+     {% for i in messages %}
+      <div class="alert alert-{{i.tags}} alert-dismissible mt-2">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{i}}
+      </div>
+      {% endfor %}
+      {% endif %}
+  <div class="row mx-auto">
+  <div class="card-body ">    
+        <h4 class="text-center">Customer Details</h4>
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="cname" class="form-control my-2" placeholder="Customer Name">
+          <input type="text" name="cno" class="form-control my-2" placeholder="Customer Ph.no">
+          <input type="text" name="email" class="form-control my-2" placeholder="Customer email">
+          <input type="text-area" name="Address" class="form-control my-2" placeholder="Customer Address">
+          {% for i in t %}
+          {{i}}
+          {% endfor %}
+          <div class="row my-2">
+          <div class="col">
+            <a href="{% url 'home_url' %}" class="btn btn-outline-danger form-control">Cancel </a>
+          </div>
+          <br>
+           <div class="col">
+            <input type="submit" value="Confirm" class="form-control btn btn-outline-success">
+           </div>
+         </div>
+        </form>
+      </div>
+      </div>  
+      </div>
+{% endblock %}
+
+

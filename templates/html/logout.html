@@ -1,0 +1,22 @@
+{% extends 'html/base.html' %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+	<div class="card col-md-4 mx-auto shadow-lg border border-primary">
+		<div class="card-body">
+			<h4>Logout</h4>
+			<p>Are you want to Login Again?</p>
+			 <div class="row">
+          <div class="col">
+            <a href="{% url 'home_url' %}" class="btn btn-danger form-control">Cancel</a>
+          </div>
+           <div class="col">
+             <a href="{% url 'login_url' %}" class="btn btn-success form-control">Login Again</a>
+           </div>
+        </div>
+		</div>
+		
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'html/base.html' %}
+{% block title %} Buy {% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4 ">
+  <div class="card col-md-4 mx-auto shadow-lg border border-info">
+    <!-- Message -->
+    {% if messages %}
+     {% for i in messages %}
+      <div class="alert alert-{{i.tags}} alert-dismissible mt-2">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{i}}
+      </div>
+      {% endfor %}
+      {% endif %}
+  <div class="row mx-auto">
+  <div class="card-body ">    
+        <h4 class="text-center"></h4>
+        <form method="post">
+          {% csrf_token %}
+              <h4>Are you sure you want to confirm your item???</h4>
+              <br>
+               <input type="text" name="email" class="form-control my-2" placeholder="Enter email">
+               <!--  <input type="text" name="sb" class="form-control my-2" placeholder="Enter Subject">
+              
+              <textarea class="form-control my-2" name="des" placeholder="Enter Message Here" rows="5"></textarea> -->
+              <br>
+          <div class="col">
+            <a href="{% url 'home_url' %}" class="btn btn-outline-danger form-control">Cancel </a>
+          </div>
+          <br>
+           <div class="col">
+            <input type="submit" value="Confirm" class="form-control btn btn-outline-success">
+          </div>
+        </div>
+        </form>
+      </div>
+      </div>  
+      </div>
+{% endblock %}
+
+
+
